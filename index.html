@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <title>Jocs MS-DOS amb js-dos</title>
+
+<!-- js-dos style sheet -->
+  <link rel="stylesheet" href="./dist/js-dos.css">
+
+<!-- js-dos -->
+  <script src="./dist/js-dos.js"></script>
+</head>
+
+<body>
+  <h1>  </h1>
+
+  <div id="dosbox" style="width: 800px; height: 600px; background-color: #2e2e2e; margin-top: 20px; margin-bottom: 20px; margin-left: 20px;"></div>
+
+  <p>  </p>
+
+  <button onclick="loadgame('./games/4x4.jsdos')">
+  <img src="./img/4x4.png" alt="4x4" style="width:250px;"><br>
+  <span style="text-decoration: underline;">4x4</span>
+  </button>
+
+  <button onclick="loadgame('./games/arkanoid.jsdos')">
+  <img src="./img/arkanoid.jpg" alt="Arkanoid" style="width:250px;"><br>
+  <span style="text-decoration: underline;">Arkanoid</span>
+  </button>
+
+  <button onclick="loadgame('./games/bchess.jsdos')">
+  <img src="./img/bchess.jpg" alt="Battle Chess" style="width:250px;"><br>
+  <span style="text-decoration: underline;">Battle Chess</span>
+  </button>
+
+  <button onclick="loadgame('./games/indy3.jsdos')">
+  <img src="./img/indy3.png" alt="Indiana Jones - Last Crusade" style="width:250px;"><br>
+  <span style="text-decoration: underline;">Indiana Jones - Last Crusade</span>
+  </button>
+
+  <button onclick="loadgame('./games/lakers.jsdos')">
+  <img src="./img/lakers.jpg" alt="Lakers vs Celtics" style="width:250px;"><br>
+  <span style="text-decoration: underline;">Lakers vs Celtics</span>
+  </button>
+
+  <button onclick="loadgame('./games/lemmings.jsdos')">
+  <img src="./img/lemmings.jpg" alt="Lemmings" style="width:250px;"><br>
+  <span style="text-decoration: underline;">Lemmings</span>
+  </button>
+
+  <button onclick="loadgame('./games/links.jsdos')">
+  <img src="./img/links.jpg" alt="Links The Challenge Of Golf" style="width:250px;"><br>
+  <span style="text-decoration: underline;">Links The Challenge Of Golf</span>
+  </button>
+
+  <button onclick="loadgame('./games/lotus.jsdos')">
+  <img src="./img/lotus.jpg" alt="Lotus The Ultimate Challenge" style="width:250px;"><br>
+  <span style="text-decoration: underline;">Lotus The Ultimate Challenge</span>
+  </button>
+
+  <button onclick="loadgame('./games/monkey.jsdos')">
+  <img src="./img/monkey.jpg" alt="Secret of Monkey Island" style="width:250px;"><br>
+  <span style="text-decoration: underline;">Secret of Monkey Island</span>
+  </button>
+
+  <button onclick="loadgame('./games/pacman.jsdos')">
+  <img src="./img/pacman.jpg" alt="Pacman" style="width:250px;"><br>
+  <span style="text-decoration: underline;">Pacman</span>
+  </button>
+
+  <button onclick="loadgame('./games/pop.jsdos')">
+  <img src="./img/pop.png" alt="Prince of Persia" style="width:250px;"><br>
+  <span style="text-decoration: underline;">Prince of Persia</span>
+  </button>
+
+  <button onclick="loadgame('./games/prehisto.jsdos')">
+  <img src="./img/prehisto.jpg" alt="Prehistorik" style="width:250px;"><br>
+  <span style="text-decoration: underline;">Prehistorik</span>
+  </button>
+
+  <button onclick="loadgame('./games/simc2000.jsdos')">
+  <img src="./img/sc2000.jpg" alt="Sim City 2000" style="width:250px;"><br>
+  <span style="text-decoration: underline;">Sim City 2000</span>
+  </button>
+
+  <button onclick="loadgame('./games/striker.jsdos')">
+  <img src="./img/striker.jpg" alt="Striker" style="width:250px;"><br>
+  <span style="text-decoration: underline;">Striker</span>
+  </button>
+
+  <button onclick="loadgame('./games/td.jsdos')">
+  <img src="./img/td.jpg" alt="Test Driver" style="width:250px;"><br>
+  <span style="text-decoration: underline;">Test Driver</span>
+  </button>
+
+  <button onclick="loadgame('./games/tetris.jsdos')">
+  <img src="./img/tetris.png" alt="Tetris" style="width:250px;"><br>
+  <span style="text-decoration: underline;">Tetris</span>
+  </button>
+
+
+
+  <script>
+    let dosInstance = null;
+
+    function loadgame(selectedGame) {
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+
+      if (dosInstance !== null) {
+        dosInstance.stop();
+      }
+
+      dosInstance = Dos(document.getElementById("dosbox"), {
+        url: selectedGame,
+      });
+    }
+  </script>
+
+</body>
+</html>
+
